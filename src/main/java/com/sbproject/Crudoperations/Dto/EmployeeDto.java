@@ -1,33 +1,31 @@
-package com.sbproject.Crudoperations.Entity;
+package com.sbproject.Crudoperations.Dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Employe {
-
-    public Employe(){
-
-    }
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EmployeeDto {
     private int id;
+    private String ename;
+    private long mobilenumber;
 
-    public int getId() {
-        return id;
+    private String role;
+    private String activeSw="YES";
+    private String imagePath;
+    private String resumePath;
+
+    public EmployeeDto(){
+
     }
-
-    public void setId(int id) {
+    public EmployeeDto(int id, String ename, long mobilenumber, String role, String activeSw, String imagePath, String resumePath) {
         this.id = id;
+        this.ename = ename;
+        this.mobilenumber = mobilenumber;
+        this.role = role;
+        this.activeSw = activeSw;
+        this.imagePath = imagePath;
+        this.resumePath = resumePath;
     }
 
     @Override
     public String toString() {
-        return "Employe{" +
+        return "EmployeeDto{" +
                 "id=" + id +
                 ", ename='" + ename + '\'' +
                 ", mobilenumber=" + mobilenumber +
@@ -36,6 +34,14 @@ public class Employe {
                 ", imagePath='" + imagePath + '\'' +
                 ", resumePath='" + resumePath + '\'' +
                 '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEname() {
@@ -85,12 +91,4 @@ public class Employe {
     public void setResumePath(String resumePath) {
         this.resumePath = resumePath;
     }
-
-    private String ename;
-    private long mobilenumber;
-    private String role;
-    private String activeSw;//3
-    private String imagePath;
-    private String resumePath;
-
 }
