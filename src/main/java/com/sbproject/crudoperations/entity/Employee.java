@@ -1,19 +1,41 @@
-package com.sbproject.Crudoperations.Dto;
+package com.sbproject.crudoperations.entity;
 
-public class EmployeeDto {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String ename;
+
     private long mobilenumber;
 
     private String role;
-    private String activeSw="YES";
+
+    private String activeSw;
+
     private String imagePath;
+
     private String resumePath;
 
-    public EmployeeDto(){
+    public Employee() {
 
     }
-    public EmployeeDto(int id, String ename, long mobilenumber, String role, String activeSw, String imagePath, String resumePath) {
+
+    public Employee(int id,
+                    String ename,
+                    long mobilenumber,
+                    String role,
+                    String activeSw,
+                    String imagePath,
+                    String resumePath) {
+
         this.id = id;
         this.ename = ename;
         this.mobilenumber = mobilenumber;
@@ -21,19 +43,6 @@ public class EmployeeDto {
         this.activeSw = activeSw;
         this.imagePath = imagePath;
         this.resumePath = resumePath;
-    }
-
-    @Override
-    public String toString() {
-        return "EmployeeDto{" +
-                "id=" + id +
-                ", ename='" + ename + '\'' +
-                ", mobilenumber=" + mobilenumber +
-                ", role='" + role + '\'' +
-                ", activeSw='" + activeSw + '\'' +
-                ", imagePath='" + imagePath + '\'' +
-                ", resumePath='" + resumePath + '\'' +
-                '}';
     }
 
     public int getId() {
@@ -90,5 +99,18 @@ public class EmployeeDto {
 
     public void setResumePath(String resumePath) {
         this.resumePath = resumePath;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", ename='" + ename + '\'' +
+                ", mobilenumber=" + mobilenumber +
+                ", role='" + role + '\'' +
+                ", activeSw='" + activeSw + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                ", resumePath='" + resumePath + '\'' +
+                '}';
     }
 }

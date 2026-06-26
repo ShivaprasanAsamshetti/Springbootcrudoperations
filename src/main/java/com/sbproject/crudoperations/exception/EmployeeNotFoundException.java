@@ -1,4 +1,4 @@
-package com.sbproject.Crudoperations.Exception;
+package com.sbproject.crudoperations.exception;
 
 public class EmployeeNotFoundException extends RuntimeException {
 

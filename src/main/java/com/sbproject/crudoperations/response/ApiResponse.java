@@ -1,8 +1,12 @@
-package com.sbproject.Crudoperations.response;
+package com.sbproject.crudoperations.response;
 
-public class Apiresponse<T>{
+public class ApiResponse<T> {
+
     private Integer status;
+
     private String message;
+
+    private T data;
 
     public Integer getStatus() {
         return status;
@@ -28,5 +32,12 @@ public class Apiresponse<T>{
         this.data = data;
     }
 
-    private T data;
+    @Override
+    public String toString() {
+        return "ApiResponse{" +
+                "status=" + status +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                '}';
+    }
 }
